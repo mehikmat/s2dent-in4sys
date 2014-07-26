@@ -1,7 +1,7 @@
-package springxmple.mvc;
+package s2dent.app;
 
 import junit.framework.TestCase;
-import springxmple.mvc.domain.Product;
+import s2dent.app.domain.Product;
 
 public class ProductUnitTest extends TestCase {
 

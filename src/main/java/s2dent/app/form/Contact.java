@@ -1,4 +1,4 @@
-package springxmple.mvc.form;
+package s2dent.app.form;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

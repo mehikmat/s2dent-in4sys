@@ -1,8 +1,8 @@
-package springxmple.mvc;
+package s2dent.app;
 
 import junit.framework.TestCase;
 import org.springframework.web.servlet.ModelAndView;
-import springxmple.mvc.controller.StudentController;
+import s2dent.app.controller.StudentController;
 
 /**
  * @author Hikamt Dhamee

@@ -16,7 +16,7 @@
     <mvc:annotation-driven/>
 
     <!-- MVC Controllers - Using annotations so we can simply scan the components -->
-    <context:component-scan base-package="springxmple.mvc" />
+    <context:component-scan base-package="s2dent.app" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
@@ -30,7 +30,7 @@
         </property>
     </bean>
 
-    <bean id="productManager" class="springxmple.mvc.service.SimpleProductManager">
+    <bean id="productManager" class="s2dent.app.service.SimpleProductManager">
         <property name="products">
             <list>
                 <ref bean="product1"/>
@@ -40,17 +40,17 @@
         </property>
     </bean>
 
-    <bean id="product1" class="springxmple.mvc.domain.Product">
+    <bean id="product1" class="s2dent.app.domain.Product">
         <property name="description" value="Lamp"/>
         <property name="price" value="5.75"/>
     </bean>
 
-    <bean id="product2" class="springxmple.mvc.domain.Product">
+    <bean id="product2" class="s2dent.app.domain.Product">
         <property name="description" value="Table"/>
         <property name="price" value="75.25"/>
     </bean>
 
-    <bean id="product3" class="springxmple.mvc.domain.Product">
+    <bean id="product3" class="s2dent.app.domain.Product">
         <property name="description" value="Chair"/>
         <property name="price" value="22.79"/>
     </bean>
@@ -67,7 +67,7 @@
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
-        <property name="packagesToScan" value="springxmple.mvc"/>
+        <property name="packagesToScan" value="s2dent.app"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${jdbc.dialect}</prop>

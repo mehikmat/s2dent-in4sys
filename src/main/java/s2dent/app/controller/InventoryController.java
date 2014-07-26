@@ -1,4 +1,4 @@
-package springxmple.mvc.controller;
+package s2dent.app.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import springxmple.mvc.domain.Product;
-import springxmple.mvc.service.ProductManager;
+import s2dent.app.service.ProductManager;
 
 import java.util.HashMap;
 import java.util.Map;

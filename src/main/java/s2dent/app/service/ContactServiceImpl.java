@@ -1,10 +1,10 @@
-package springxmple.mvc.service;
+package s2dent.app.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import springxmple.mvc.dao.ContactDao;
-import springxmple.mvc.form.Contact;
+import s2dent.app.dao.ContactDao;
+import s2dent.app.form.Contact;
 
 import java.util.List;
 

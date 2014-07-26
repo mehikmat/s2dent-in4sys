@@ -1,6 +1,6 @@
-package springxmple.mvc.dao;
+package s2dent.app.dao;
 
-import springxmple.mvc.domain.Product;
+import s2dent.app.domain.Product;
 
 import java.util.List;
 

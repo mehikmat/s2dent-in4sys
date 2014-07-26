@@ -1,6 +1,6 @@
-package springxmple.mvc.service;
+package s2dent.app.service;
 
-import springxmple.mvc.domain.Product;
+import s2dent.app.domain.Product;
 
 import java.io.Serializable;
 import java.util.List;

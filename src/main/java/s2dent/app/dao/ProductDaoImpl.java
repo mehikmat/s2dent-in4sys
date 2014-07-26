@@ -1,15 +1,4 @@
-package springxmple.mvc.dao;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
-import org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport;
-import springxmple.mvc.domain.Product;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
+package s2dent.app.dao;
 
 /**
  * @author Hikamt Dhamee

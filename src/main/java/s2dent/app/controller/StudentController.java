@@ -1,4 +1,4 @@
-package springxmple.mvc.controller;
+package s2dent.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import springxmple.mvc.domain.Student;
+import s2dent.app.domain.Student;
 
 /**
  * @author Hikamt Dhamee

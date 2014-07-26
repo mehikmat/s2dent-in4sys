@@ -1,10 +1,10 @@
-package springxmple.mvc.dao;
+package s2dent.app.service;
 
-import springxmple.mvc.form.Contact;
+import s2dent.app.form.Contact;
 
 import java.util.List;
 
-public interface ContactDao {
+public interface ContactService {
 
     public void addContact(Contact contact);
     public List<Contact> listContact();

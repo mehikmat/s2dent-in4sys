@@ -1,4 +1,4 @@
-package springxmple.mvc.domain;
+package s2dent.app.domain;
 
 /**
  * @author Hikamt Dhamee

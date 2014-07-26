@@ -1,9 +1,9 @@
-package springxmple.mvc.dao;
+package s2dent.app.dao;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import springxmple.mvc.form.Contact;
+import s2dent.app.form.Contact;
 
 import java.util.List;
 
