@@ -1,0 +1,1 @@
+<h1>This is body template</h1>

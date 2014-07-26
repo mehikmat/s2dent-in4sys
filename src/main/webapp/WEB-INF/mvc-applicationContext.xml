@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Spring Context Configuration -->
+    <context:annotation-config />
+
+    <!-- MVC Configuration -->
+    <mvc:annotation-driven/>
+
+    <!-- MVC Controllers - Using annotations so we can simply scan the components -->
+    <context:component-scan base-package="springxmple.mvc" />
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+    </bean>
+    <bean id="tilesConfigurer"
+          class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="productManager" class="springxmple.mvc.service.SimpleProductManager">
+        <property name="products">
+            <list>
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="product1" class="springxmple.mvc.domain.Product">
+        <property name="description" value="Lamp"/>
+        <property name="price" value="5.75"/>
+    </bean>
+
+    <bean id="product2" class="springxmple.mvc.domain.Product">
+        <property name="description" value="Table"/>
+        <property name="price" value="75.25"/>
+    </bean>
+
+    <bean id="product3" class="springxmple.mvc.domain.Product">
+        <property name="description" value="Chair"/>
+        <property name="price" value="22.79"/>
+    </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+        <property name="packagesToScan" value="springxmple.mvc"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <tx:annotation-driven/>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+</beans>
