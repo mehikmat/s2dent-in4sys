@@ -1,16 +1,11 @@
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
 <html>
 <head>
-    <title>Spring 3 MVC Series - Contact Manager | viralpatel.net</title>
+    <title>Student Info System-Contact Manager</title>
 </head>
 <body>
-
-<h2>Contact Manager</h2>
-
-<form:form method="post" action="add.html" commandName="contact">
-
+<h2>Contact Manager Module</h2>
+<form:form method="post" action="addContact" commandName="contact">
     <table>
         <tr>
             <td><form:label path="firstname"><spring:message code="label.firstname"/></form:label></td>
@@ -36,8 +31,7 @@
     </table>
 </form:form>
 
-
-<h3>Contacts</h3>
+<h3>Contact List</h3>
 <c:if  test="${!empty contactList}">
     <table class="data">
         <tr>
@@ -51,11 +45,10 @@
                 <td>${contact.lastname}, ${contact.firstname} </td>
                 <td>${contact.email}</td>
                 <td>${contact.telephone}</td>
-                <td><a href="delete/${contact.id}">delete</a></td>
+                <td><a href="deleteContact/${contact.id}">delete</a></td>
             </tr>
         </c:forEach>
     </table>
 </c:if>
-
 </body>
 </html>

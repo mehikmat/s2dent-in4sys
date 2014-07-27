@@ -1,32 +1,60 @@
 package s2dent.app.domain;
 
+import javax.persistence.*;
+
 /**
  * @author Hikamt Dhamee
  * @email me.hemant.available@gmail.com
  */
+@Entity
+@Table(name = "STUDENT")
 public class Student {
-    private Integer age;
-    private String name;
+    @Id
+    @Column(name="ID")
+    @GeneratedValue
     private Integer id;
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-    public Integer getAge() {
-        return age;
-    }
+    @Column(name="FIRSTNAME")
+    private String firstname;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName() {
-        return name;
-    }
+    @Column(name="LASTNAME")
+    private String lastname;
 
-    public void setId(Integer id) {
-        this.id = id;
+    @Column(name="EMAIL")
+    private String email;
+
+    @Column(name="TELEPHONE")
+    private String telephone;
+
+
+    public String getEmail() {
+        return email;
+    }
+    public String getTelephone() {
+        return telephone;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+    public String getFirstname() {
+        return firstname;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
     public Integer getId() {
         return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

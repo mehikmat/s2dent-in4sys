@@ -2,6 +2,7 @@ use mydb;
 drop table if exists users;
 drop table if exists authorities;
 drop  table if exists CONTACTS;
+drop  table if exists STUDENT;
 
 create table users(
     username varchar(50) not null primary key,
@@ -17,6 +18,16 @@ create table authorities (
 create unique index ix_auth_username on authorities (username,authority);
 
 CREATE TABLE CONTACTS
+(
+  ID         INT PRIMARY KEY AUTO_INCREMENT,
+  FIRSTNAME   VARCHAR(30),
+  LASTNAME    VARCHAR(30),
+  TELEPHONE   VARCHAR(15),
+  EMAIL       VARCHAR(30),
+  CREATED     TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE STUDENT
 (
   ID         INT PRIMARY KEY AUTO_INCREMENT,
   FIRSTNAME   VARCHAR(30),

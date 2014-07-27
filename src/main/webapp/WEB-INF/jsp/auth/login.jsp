@@ -1,13 +1,11 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" import="javax.servlet.jsp.PageContext" %>
-<!DOCTYPE html>
+<%@ include file="/WEB-INF/jsp/include.jsp" %>
 <html>
 <head>
-    <title>Spring Security Form Login Tutorial</title>
+    <title>Student Info System-Login</title>
 </head>
 
 <body>
-<H1>Welcome to the Spring Security Form Login Tutorial!</H1>
+<H1>System Login</H1>
 <form id="form" action="<c:url value='/login.do'/>" method="POST">
 
     <c:if test="${not empty param.err}">

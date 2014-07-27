@@ -19,18 +19,19 @@
         <put-attribute name="body" value="/WEB-INF/jsp/student.jsp" />
     </definition>
 
-    <definition name="result.definition" extends="base.definition" >
-        <put-attribute name="title" value="Simple Student Result" type="string" />
-        <put-attribute name="body" value="/WEB-INF/jsp/result.jsp" />
-    </definition>
-
     <definition name="login.definition" extends="base.definition" >
         <put-attribute name="title" value="Simple Student Login" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/auth/login.jsp" />
     </definition>
+
     <definition name="contact.definition" extends="base.definition" >
-        <put-attribute name="title" value="Simple Student Login" type="string" />
+        <put-attribute name="title" value="Contact Details" type="string" />
         <put-attribute name="body" value="/WEB-INF/jsp/contact.jsp" />
+    </definition>
+
+    <definition name="home.definition" extends="base.definition" >
+        <put-attribute name="title" value="Home" type="string" />
+        <put-attribute name="body" value="/index.jsp" />
     </definition>
 
 </tiles-definitions>

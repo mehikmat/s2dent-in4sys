@@ -1,12 +1,16 @@
 package s2dent.app.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 import s2dent.app.domain.Student;
+import s2dent.app.service.StudentService;
+
+import java.util.Map;
 
 /**
  * @author Hikamt Dhamee
@@ -15,18 +19,25 @@ import s2dent.app.domain.Student;
 @Controller
 public class StudentController {
 
+    @Autowired
+    private StudentService studentService;
+
     @RequestMapping(value = "/student", method = RequestMethod.GET)
-    public ModelAndView student() {
-        return new ModelAndView("student.definition", "command", new Student());
+    public String listContacts(Map<String, Object> map) {
+        map.put("student", new Student());
+        map.put("studentList", studentService.listStudent());
+        return "student.definition";
     }
 
     @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-    public String addStudent(@ModelAttribute("StudentModel")Student student,
-                             ModelMap model) {
-        model.addAttribute("name", student.getName());
-        model.addAttribute("age", student.getAge());
-        model.addAttribute("id", student.getId());
+    public String addContact(@ModelAttribute("student") Student student , BindingResult result) {
+        studentService.addStudent(student);
+        return "redirect:/student";
+    }
 
-        return "result.definition";
+    @RequestMapping(value = "/deleteStudent/{studentId}", method = RequestMethod.GET)
+    public String deleteContact(@PathVariable("studentId") Integer studentId) {
+        studentService.removeStudent(studentId);
+        return "redirect:/student";
     }
 }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import s2dent.app.dao.ContactDao;
-import s2dent.app.form.Contact;
+import s2dent.app.domain.Contact;
 
 import java.util.List;
 
@@ -22,7 +22,6 @@ public class ContactServiceImpl implements ContactService {
 
     @Transactional
     public List<Contact> listContact() {
-
         return contactDao.listContact();
     }
 

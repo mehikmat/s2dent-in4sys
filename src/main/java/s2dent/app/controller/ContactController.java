@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import s2dent.app.form.Contact;
+import s2dent.app.domain.Contact;
 import s2dent.app.service.ContactService;
 
 import java.util.Map;
@@ -18,30 +18,22 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @RequestMapping("/index")
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String listContacts(Map<String, Object> map) {
-
         map.put("contact", new Contact());
         map.put("contactList", contactService.listContact());
-
         return "contact.definition";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addContact(@ModelAttribute("contact")
-                             Contact contact, BindingResult result) {
-
+    @RequestMapping(value = "/addContact", method = RequestMethod.POST)
+    public String addContact(@ModelAttribute("contact") Contact contact, BindingResult result) {
         contactService.addContact(contact);
-
-        return "redirect:/index";
+        return "redirect:/contact";
     }
 
-    @RequestMapping("/delete/{contactId}")
-    public String deleteContact(@PathVariable("contactId")
-                                Integer contactId) {
-
+    @RequestMapping(value = "/deleteContact/{contactId}", method = RequestMethod.GET)
+    public String deleteContact(@PathVariable("contactId") Integer contactId) {
         contactService.removeContact(contactId);
-
-        return "redirect:/index";
+        return "redirect:/contact";
     }
 }

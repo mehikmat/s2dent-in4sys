@@ -58,7 +58,7 @@
             <concurrency-control max-sessions="1" expired-url="/login?time=1" />
         </session-management>
         <form-login login-page="/login" login-processing-url="/login.do"
-                    default-target-url="/index.jsp" always-use-default-target="true"
+                    default-target-url="/home" always-use-default-target="true"
                     authentication-failure-url="/login?err=1"
                     username-parameter="username"
                     password-parameter="password" />
