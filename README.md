@@ -1,5 +1,5 @@
 This is a complete end-to-end application using Spring 3.0 MVC
-as front end technology and Hibernate as backend ORM technology.
+as front end technology and Hibernate4/MySQL5 as backend ORM technology.
 
 For this application we are also using Maven for build and dependency
 management and MySQL as database to persist the data.
