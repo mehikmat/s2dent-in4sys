@@ -18,6 +18,7 @@
         <apache.tiles.version>2.2.1</apache.tiles.version>
     </properties>
 
+    <!--Spring core-->
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -123,6 +124,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.connector.version}</version>
+        </dependency>
+
+        <!--embedded database dependency for testing-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.1</version>
+            <scope>runtime</scope>
         </dependency>
 
         <!--Junit-->
